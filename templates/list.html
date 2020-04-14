@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>{{ title }}</title>
+</head>
+<body>
+  <a href="/homeworks/new" class="link-btn">Create new HW</a>
+  <table>
+    {{#rows}}
+    <tr>
+      <td>{{ number }}</td>
+      <td><a href="/homeworks/{{ id }}">{{ title }}</a></td>
+      <td><button onclick="deleteHW('{{ id }}')">X</button></td>
+    </tr>
+    {{/rows}}
+  </table>
+
+  <script>
+    function deleteHW(id) {
+      const xhr = new XMLHttpRequest();
+      xhr.open('DELETE', '/homeworks/'+id, true);
+      xhr.send(id);
+      xhr.onload = () => location.reload();
+    }
+  </script>
+</body>
+</html>

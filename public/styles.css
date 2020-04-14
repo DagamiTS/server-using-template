@@ -1,0 +1,26 @@
+table tr {
+  background-color: bisque;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+}
+
+.link-btn {
+  text-transform: uppercase;
+  text-decoration: none;
+  width: 200px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient( 45deg, #8609b8, #2f0000);
+  color: white;
+}
